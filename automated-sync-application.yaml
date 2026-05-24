@@ -12,7 +12,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc #cluster URL
     namespace: development
-  syncPolicy:
+  syncPolicy: #automatically get synched when git repository changed
     automated: 
-      prune: true
-      selfHeal: true
+      prune: true #delete existing resource that are left 
+      selfHeal: true #detect drift and update based on git configuration defines
